@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators - 20+ Logic Questions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Operators in JavaScript - 20+ Practice Questions</h1>
+        <a href="index.html">← Back to Home</a>
+    </header>
+
+    <section class="operators">
+        <h2>20+ Logic Questions (with Answers)</h2>
+        <pre><code>1. What is 15 + 7 * 3 ?                  → 36
+2. What is 100 % 7 ?                     → 2
+3. Is 25 > 18 && 25 < 30 ?               → true
+4. Is 10 === "10" ?                      → false
+5. Is 10 == "10" ?                       → true
+6. !(5 > 3) ?                            → false
+7. 8 > 5 || 8 < 3 ?                      → true
+8. 50 >= 50 ?                            → true
+9. 7 + 3 * 2 ** 2 ?                      → 19
+10. 100 / 0 ?                            → Infinity</code></pre>
+    </section>
+
+    <section class="operators">
+        <h2>Interactive Practice</h2>
+        <input type="number" id="n1" placeholder="Number 1">
+        <input type="number" id="n2" placeholder="Number 2">
+        <br><br>
+        <button onclick="calc('+')"> + </button>
+        <button onclick="calc('-')"> - </button>
+        <button onclick="calc('*')"> * </button>
+        <button onclick="calc('/')"> / </button>
+        <button onclick="calc('%')"> % </button>
+        <pre id="result"></pre>
+    </section>
+
+    <section class="operators">
+        <h2>More Logic Questions</h2>
+        <pre><code>11. age = 17; Can vote? (age >= 18)           → false
+12. score = 85; Grade A? (score >= 90)         → false
+13. temp = 35; Is hot? (temp > 30)             → true
+14. x = 10; x += 5 → ?                         → 15
+15. isMember && hasCoupon ?                    → Discount
+16. !isLoggedIn ? "Please Login" : "Welcome"   → Message
+17. 10 != 10 ?                                 → false
+18. 5 ** 3 = ?                                 → 125
+19. 100 - 45 * 2 = ?                           → 10
+20. (10 + 5) * 2 = ?                           → 30
+21. 7 % 2 == 1 ? "Odd" : "Even"                → Odd
+22. salary > 50000 && experience > 5 ?         → Bonus Eligible</code></pre>
+    </section>
+
+    <script>
+        function calc(op) {
+            let a = parseFloat(document.getElementById('n1').value);
+            let b = parseFloat(document.getElementById('n2').value);
+            let out = document.getElementById('result');
+            
+            if (isNaN(a) || isNaN(b)) {
+                out.textContent = "Please enter both numbers!";
+                return;
+            }
+            
+            let res;
+            switch(op){
+                case '+': res = a + b; break;
+                case '-': res = a - b; break;
+                case '*': res = a * b; break;
+                case '/': res = b !== 0 ? a / b : "Cannot divide by 0"; break;
+                case '%': res = a % b; break;
+            }
+            out.textContent = `${a} ${op} ${b} = ${res}`;
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

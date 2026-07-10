@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Data Types in JavaScript</h1>
+        <a href="index.html">← Back to Home</a>
+    </header>
+
+    <section class="datatypes">
+        <h2>1. Primitive Data Types</h2>
+        
+        <h3>String</h3>
+        <pre><code>let name = "Ahmed";
+let greeting = 'Hello World';
+let message = `My name is ${name}`;  // Template literal (ES6)</code></pre>
+
+        <h3>Number</h3>
+        <pre><code>let age = 20;
+let price = 99.99;
+let temperature = -5;</code></pre>
+
+        <h3>Boolean</h3>
+        <pre><code>let isStudent = true;
+let isLoggedIn = false;</code></pre>
+    </section>
+
+    <section class="datatypes">
+        <h2>2. Special Values</h2>
+        <pre><code>let undefinedVar;           // undefined
+let nullVar = null;            // null (intentional empty)
+
+console.log(typeof undefinedVar); // "undefined"
+console.log(typeof nullVar);      // "object" (famous bug)</code></pre>
+    </section>
+
+    <section class="datatypes">
+        <h2>3. Complex Data Types</h2>
+        <pre><code>// Object
+let student = {
+    name: "Sara",
+    age: 21,
+    isActive: true
+};
+
+// Array
+let fruits = ["Apple", "Banana", "Mango"];
+
+// Function
+function add(a, b) {
+    return a + b;
+}</code></pre>
+    </section>
+
+    <section class="datatypes">
+        <h2>Live Demo</h2>
+        <input type="text" id="input" placeholder="Enter anything...">
+        <button onclick="checkType()">Check Data Type</button>
+        <pre id="output"></pre>
+    </section>
+
+    <script>
+        function checkType() {
+            const value = document.getElementById('input').value;
+            let result = `Input: "${value}"\n\n`;
+            
+            if (value === "") {
+                result += "Type: Empty String";
+            } else if (!isNaN(value) && value.trim() !== "") {
+                result += `Type: Number\nValue: ${Number(value)}`;
+            } else if (value.toLowerCase() === "true" || value.toLowerCase() === "false") {
+                result += `Type: Boolean\nValue: ${value.toLowerCase() === "true"}`;
+            } else {
+                result += `Type: String\nLength: ${value.length}`;
+            }
+            
+            result += `\n\ntypeof: ${typeof value}`;
+            document.getElementById('output').textContent = result;
+        }
+    </script>
+</body>
+</html>

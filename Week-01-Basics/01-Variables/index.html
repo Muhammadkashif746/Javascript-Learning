@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables - Detailed</title>
+    <link rel="stylesheet" href="style.css">
+    
+   
+</head>
+<body>
+    <header>
+        <h1>Variables in JavaScript (ES5 vs ES6)</h1>
+        <a href="index.html">← Back</a>
+    </header>
+
+    <section>
+        <h2>1. var (ES5 - Old Way)</h2>
+        <pre><code>// Function scoped, can be redeclared and updated
+var name = "Ali";
+var name = "Ahmed";   // No error (redeclaration allowed)
+name = "Khan";        // Can be updated
+
+console.log(name);</code></pre>
+    </section>
+
+    <section>
+        <h2>2. let (ES6 - Modern)</h2>
+        <pre><code>// Block scoped, cannot be redeclared but can be updated
+let age = 20;
+age = 21;           // OK - updating value
+// let age = 22;    // Error - cannot redeclare</code></pre>
+    </section>
+
+    <section>
+        <h2>3. const (ES6 - Best for constants)</h2>
+        <pre><code>// Block scoped, cannot be redeclared or updated
+const PI = 3.14;
+// PI = 3.1416;     // Error!
+const student = { name: "Sara" };
+student.name = "Ayesha";   // OK (object properties can change)</code></pre>
+    </section>
+
+    <section>
+        <h2>Live Demo</h2>
+        <button onclick="showVariables()">Show All Variables</button>
+        <pre id="demo-output"></pre>
+    </section>
+<script src="script.js"></script>
+</body>
+</html>

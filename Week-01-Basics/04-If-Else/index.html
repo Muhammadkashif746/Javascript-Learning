@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If-Else - 20+ Logic Questions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>If-Else Statements - 20+ Practice Questions</h1>
+        <a href="index.html">← Back to Home</a>
+    </header>
+
+    <section class="ifelse">
+        <h2>20+ Logical Questions (with Answers)</h2>
+        <pre><code>1. age = 17 → Can vote?                    → No
+2. marks = 92 → Grade?                      → A
+3. temp = 38 → Weather?                     → Very Hot
+4. num = 7 → Even or Odd?                   → Odd
+5. salary = 45000 → Bonus?                  → No
+6. isLoggedIn = false → Message?            → Please Login
+7. year = 2024 → Leap Year?                 → Yes
+8. score = 85 → Passed?                     → Yes
+9. age = 16, hasGuardian = true → Entry?    → Yes
+10. number = -5 → Positive or Negative?     → Negative</code></pre>
+    </section>
+
+    <section class="ifelse">
+        <h2>More Questions</h2>
+        <pre><code>11. time = 14 → Good Morning/Afternoon?    → Good Afternoon
+12. day = "Sunday" → Weekend?               → Yes
+13. passwordLength = 6 → Strong Password?   → No
+14. userAge = 25, isStudent = true → Discount? → Yes
+15. marks = 65 → Division?                  → Third
+16. bloodSugar = 180 → Diabetic?            → Yes
+17. speed = 85 → Over Speed?                → Yes
+18. income = 800000 → Tax Payable?          → Yes
+19. age = 65 → Senior Citizen?              → Yes
+20. num1 = 10, num2 = 10 → Equal?           → Yes
+21. month = 2, year = 2024 → Days?          → 29 (Leap Year)
+22. temperature = 0 → Freezing?             → Yes</code></pre>
+    </section>
+
+    <section class="ifelse">
+        <h2>🔥 Interactive Grade Checker</h2>
+        <input type="number" id="score" placeholder="Enter Marks (0-100)">
+        <button onclick="checkGrade()">Get Grade</button>
+        <pre id="output"></pre>
+    </section>
+
+    <script>
+        function checkGrade() {
+            const marks = parseInt(document.getElementById('score').value);
+            const output = document.getElementById('output');
+            
+            if (isNaN(marks) || marks < 0 || marks > 100) {
+                output.textContent = "❌ Enter valid marks between 0-100";
+                return;
+            }
+            
+            let result = `Marks: ${marks}\n`;
+            
+            if (marks >= 90) result += "Grade: A - Outstanding";
+            else if (marks >= 80) result += "Grade: B - Excellent";
+            else if (marks >= 70) result += "Grade: C - Good";
+            else if (marks >= 60) result += "Grade: D - Average";
+            else result += "Grade: F - Fail";
+            
+            output.textContent = result;
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
