@@ -2,7 +2,7 @@ function runExpandedPractice() {
     let output = "=== Practice Challenges with Full Examples ===\n\n";
 
     // Challenge 1: Shopping Cart
-    output += "🛒 Challenge 1: Shopping Cart\n";
+    output += " Challenge 1: Shopping Cart\n";
     let cart = [
         {item: "Laptop", price: 999},
         {item: "Mouse", price: 29},
@@ -14,7 +14,7 @@ function runExpandedPractice() {
     output += `Total Price: $${cartTotal}\n\n`;
 
     // Challenge 2: Student Management
-    output += "📚 Challenge 2: Student Management\n";
+    output += " Challenge 2: Student Management\n";
     const students = [
         {name: "Ali", marks: 85, grade: "B"},
         {name: "Sara", marks: 95, grade: "A"},
@@ -30,20 +30,20 @@ function runExpandedPractice() {
     output += `Average Marks: ${averageMarks.toFixed(1)}\n\n`;
 
     // Challenge 3: Filter & Search
-    output += "🔍 Challenge 3: Search & Filter\n";
+    output += " Challenge 3: Search & Filter\n";
     const products = ["Laptop", "Phone", "Tablet", "Desktop", "Monitor"];
     
     const searchResult = products.filter(p => p.toLowerCase().includes("top"));
     output += `Products containing 'top': ${searchResult}\n`;
 
     // Bonus Challenge
-    output += "\n🔥 Bonus: Remove duplicates\n";
+    output += "\n Bonus: Remove duplicates\n";
     const nums = [1, 2, 2, 3, 4, 4, 5];
     const unique = [...new Set(nums)];
     output += `Original: ${nums}\n`;
     output += `Unique: ${unique}\n`;
 
-    output += "\n✅ Practice these methods daily!";
+    output += "\n Practice these methods daily!";
 
     document.getElementById('output').textContent = output;
 }
