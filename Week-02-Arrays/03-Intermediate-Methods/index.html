@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 - Intermediate Array Methods</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>03. Intermediate Array Methods</h1>
+        <a href="../index.html">← Week 2 Home</a>
+    </header>
+
+    <section class="arrays">
+        <h2>1. slice() - Extract portion without modifying original</h2>
+        <pre><code>const numbers = [1, 2, 3, 4, 5, 6];
+const sliced = numbers.slice(1, 4);     // from index 1 to 3
+const lastTwo = numbers.slice(-2);      // last 2 elements</code></pre>
+    </section>
+
+    <section class="arrays">
+        <h2>2. splice() - Add/Remove/Replace elements (modifies original)</h2>
+        <pre><code>const fruits = ["Apple", "Banana", "Mango", "Orange"];
+
+// Remove 1 item at index 2
+fruits.splice(2, 1);
+
+// Add new items at index 1
+fruits.splice(1, 0, "Kiwi", "Pineapple");</code></pre>
+    </section>
+
+    <section class="arrays">
+        <h2>3. Searching Methods</h2>
+        <pre><code>const arr = ["Ali", "Sara", "Ahmed", "Sara"];
+
+// indexOf, lastIndexOf, includes
+arr.indexOf("Sara");        // 1
+arr.lastIndexOf("Sara");    // 3
+arr.includes("Ahmed");      // true</code></pre>
+    </section>
+
+    <section class="arrays">
+        <h2>Live Demo - Intermediate Methods</h2>
+        <button onclick="demoIntermediateMethods()">Run Intermediate Methods Demo</button>
+        <pre id="output" style="min-height: 420px; white-space: pre-wrap;"></pre>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

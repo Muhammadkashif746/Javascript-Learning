@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 - Basic Array Operations</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>02. Basic Array Operations</h1>
+        <a href="../index.html">← Week 2 Home</a>
+    </header>
+
+    <section class="arrays">
+        <h2>1. Adding Elements</h2>
+        <pre><code>// push()  - Add to the END
+// unshift() - Add to the START
+
+let tasks = ["Learn JS"];
+tasks.push("Practice Arrays");        // Add at end
+tasks.unshift("Revise Week 1");       // Add at start
+
+console.log(tasks);</code></pre>
+    </section>
+
+    <section class="arrays">
+        <h2>2. Removing Elements</h2>
+        <pre><code>// pop()   - Remove from END
+// shift() - Remove from START
+
+tasks.pop();     // Removes last item
+tasks.shift();   // Removes first item</code></pre>
+    </section>
+
+    <section class="arrays">
+        <h2>3. length Property</h2>
+        <pre><code>console.log(tasks.length);
+tasks.length = 2;     // Truncate array
+tasks[tasks.length] = "New Item";  // Add using length</code></pre>
+    </section>
+
+    <section class="arrays">
+        <h2>Live Demo - Basic Operations</h2>
+        <button onclick="demoBasicOperations()">Run Basic Operations Demo</button>
+        <pre id="output" style="min-height: 380px; white-space: pre-wrap;"></pre>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

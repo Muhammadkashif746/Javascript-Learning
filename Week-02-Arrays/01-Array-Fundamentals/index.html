@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 - Array Fundamentals</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>01. Array Fundamentals</h1>
+        <a href="../index.html">← Back</a>
+    </header>
+
+    <section class="arrays">
+        <h2>1. What is an Array?</h2>
+        <p>Arrays are used to store multiple values in a single variable. They are ordered and can hold any data type.</p>
+        <pre><code>const numbers = [10, 20, 30];
+const names = ["Ali", "Sara", "Ahmed"];
+const mixed = [1, "text", true, null];</code></pre>
+    </section>
+
+    <section class="arrays">
+        <h2>2. Array Properties</h2>
+        <pre><code>const arr = [5, 10, 15];
+console.log(arr.length);        // 3
+console.log(arr[0]);            // 5 (first item)
+console.log(arr[arr.length-1]); // last item</code></pre>
+    </section>
+
+    <section class="arrays">
+        <h2>Live Demo</h2>
+        <button onclick="demoFundamentals()">Run Fundamentals Demo</button>
+        <pre id="output" style="min-height: 250px;"></pre>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

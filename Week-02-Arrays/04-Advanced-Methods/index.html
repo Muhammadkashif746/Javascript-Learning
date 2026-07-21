@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 - Advanced Array Methods</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>04. Advanced Array Methods</h1>
+        <a href="../index.html">← Week 2 Home</a>
+    </header>
+
+    <section class="arrays">
+        <h2>1. forEach() - Iterate over array</h2>
+        <pre><code>array.forEach((element, index, array) => {
+    // code here
+});</code></pre>
+    </section>
+
+    <section class="arrays">
+        <h2>2. map() - Transform each element</h2>
+        <pre><code>// Example: Double all numbers
+const doubled = numbers.map(num => num * 2);</code></pre>
+    </section>
+
+    <section class="arrays">
+        <h2>3. filter() - Filter based on condition</h2>
+        <pre><code>const adults = people.filter(person => person.age >= 18);</code></pre>
+    </section>
+
+    <section class="arrays">
+        <h2>4. find() &amp; findIndex()</h2>
+        <pre><code>const user = users.find(u => u.email === "test@example.com");</code></pre>
+    </section>
+
+    <section class="arrays">
+        <h2>5. reduce() - Reduce array to single value</h2>
+        <pre><code>const sum = numbers.reduce((acc, curr) => acc + curr, 0);</code></pre>
+    </section>
+
+    <section class="arrays">
+        <h2>Live Demo + Questions</h2>
+        <button onclick="demoAdvancedMethods()">Run Advanced Demo</button>
+        <pre id="output" style="min-height: 520px; white-space: pre-wrap;"></pre>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
