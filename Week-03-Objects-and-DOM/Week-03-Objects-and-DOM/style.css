@@ -1,0 +1,235 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f0f4f8 50%, #dbeafe 100%);
+    color: #333;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    color: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(30, 58, 138, 0.25);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 1.8rem;
+}
+
+a {
+    color: #93c5fd;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+section {
+    background: white;
+    margin: 25px auto;
+    padding: 28px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 6px solid #3b82f6;
+    max-width: 900px;
+}
+
+h2 {
+    color: #1e3a8a;
+    margin-top: 0;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+pre {
+    padding: 18px;
+    border-radius: 12px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+    color: white;
+    box-shadow: inset 0 3px 10px rgba(0,0,0,0.25);
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 13px 28px;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 8px 6px 8px 0;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+button:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+}
+
+button.secondary {
+    background: #64748b;
+}
+
+button.secondary:hover {
+    background: #475569;
+}
+
+button.success {
+    background: #16a34a;
+}
+
+button.success:hover {
+    background: #15803d;
+}
+
+#output {
+    background: #f8fafc;
+    color: #1e2937;
+    border: 2px solid #e2e8f0;
+    padding: 18px;
+    border-radius: 12px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    min-height: 120px;
+}
+
+/* ========== Better Centered Form Cards ========== */
+.forms-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.form-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px 28px;
+    width: 100%;
+    max-width: 420px;
+    border-top: 5px solid #3b82f6;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.form-card h3 {
+    margin: 0 0 20px 0;
+    text-align: center;
+    color: #1e3a8a;
+    font-size: 1.4rem;
+}
+
+.form-card.login {
+    border-top-color: #8b5cf6;
+}
+
+.form-card.contact {
+    border-top-color: #10b981;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #334155;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 15px;
+    box-sizing: border-box;
+    transition: border-color 0.25s, box-shadow 0.25s;
+    background: #f8fafc;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    background: #fff;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 12px 0 18px;
+}
+
+.checkbox-group input {
+    width: auto;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.form-actions button {
+    flex: 1;
+    margin: 0;
+}
+
+/* Center helper */
+.center-text {
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+    }
+    section {
+        padding: 20px;
+    }
+    .forms-wrapper {
+        gap: 20px;
+    }
+    .form-card {
+        max-width: 100%;
+    }
+}

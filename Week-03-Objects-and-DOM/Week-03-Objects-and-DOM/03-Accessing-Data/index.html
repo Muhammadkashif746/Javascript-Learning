@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 - Accessing Data</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>03. Accessing Data (Different Methods)</h1>
+        <a href="../index.html">← Back</a>
+    </header>
+
+    <section>
+        <h2>1. Dot Notation vs Bracket Notation</h2>
+        <pre><code>const user = {
+    name: "Kashif",
+    age: 22,
+    "user-id": 746,
+    skills: ["JS", "React"]
+};
+
+// Dot Notation (simple & clean)
+user.name
+user.age
+
+// Bracket Notation (required when key has special characters or is dynamic)
+user["user-id"]
+user["skills"]
+
+const key = "name";
+user[key]          // Dynamic access</code></pre>
+    </section>
+
+    <section>
+        <h2>2. Accessing Array of Objects</h2>
+        <pre><code>const users = [
+    { id: 1, name: "Ali", role: "Admin" },
+    { id: 2, name: "Sara", role: "User" },
+    { id: 3, name: "Ahmed", role: "Moderator" }
+];
+
+// By Index
+users[0]
+users[0].name
+
+// By filter / find
+users.find(u => u.id === 2)
+users.filter(u => u.role === "User")
+
+// By map (transform)
+users.map(u => u.name)</code></pre>
+    </section>
+
+    <section>
+        <h2>3. Useful Methods for Accessing Data</h2>
+        <ul>
+            <li><strong>find()</strong> → returns the first matching object</li>
+            <li><strong>filter()</strong> → returns array of all matching objects</li>
+            <li><strong>map()</strong> → creates new array by transforming each item</li>
+            <li><strong>some()</strong> → checks if at least one item matches</li>
+            <li><strong>every()</strong> → checks if all items match</li>
+            <li><strong>reduce()</strong> → useful for calculations (sum, max, min)</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Live Demo - Product Store</h2>
+        <button onclick="demoAccessingData()">Run Accessing Demo</button>
+        <pre id="output" style="min-height: 350px;"></pre>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

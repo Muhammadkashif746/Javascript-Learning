@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 - Arrays of Objects</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>02. Arrays of Objects</h1>
+        <a href="../index.html">← Back</a>
+    </header>
+
+    <section>
+        <h2>1. Why Arrays of Objects?</h2>
+        <p>When we need to store large amounts of related data (like students, products, users), we use an <strong>Array of Objects</strong>.</p>
+        <pre><code>const students = [
+    { id: 1, name: "Ali", age: 20, marks: 85 },
+    { id: 2, name: "Sara", age: 21, marks: 92 },
+    { id: 3, name: "Ahmed", age: 19, marks: 78 }
+];</code></pre>
+    </section>
+
+    <section>
+        <h2>2. Storing Large Data Example</h2>
+        <pre><code>const products = [
+    { id: 101, name: "Laptop", price: 85000, brand: "Dell", inStock: true },
+    { id: 102, name: "Mobile", price: 45000, brand: "Samsung", inStock: true },
+    { id: 103, name: "Headphones", price: 3500, brand: "Sony", inStock: false },
+    { id: 104, name: "Keyboard", price: 2500, brand: "Logitech", inStock: true },
+    { id: 105, name: "Mouse", price: 1200, brand: "HP", inStock: true }
+];</code></pre>
+    </section>
+
+    <section>
+        <h2>3. Common Operations</h2>
+        <pre><code>// Access single object by index
+console.log(products[0]);           // First product
+console.log(products[0].name);      // "Laptop"
+
+// Loop through all objects
+products.forEach(product => {
+    console.log(product.name, product.price);
+});
+
+// Get only names
+const names = products.map(p => p.name);
+
+// Filter in-stock products
+const available = products.filter(p => p.inStock);</code></pre>
+    </section>
+
+    <section>
+        <h2>Live Demo - Students Database</h2>
+        <button onclick="demoArrayOfObjects()">Run Demo</button>
+        <pre id="output" style="min-height: 320px;"></pre>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

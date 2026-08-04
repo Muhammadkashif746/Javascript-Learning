@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 - Objects Fundamentals</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>01. Objects Fundamentals</h1>
+        <a href="../index.html">← Back</a>
+    </header>
+
+    <section>
+        <h2>1. What is an Object?</h2>
+        <p>Objects are used to store related data and functionality together in key-value pairs.</p>
+        <pre><code>const student = {
+    name: "Kashif",
+    age: 22,
+    isStudent: true,
+    skills: ["HTML", "CSS", "JavaScript"]
+};</code></pre>
+    </section>
+
+    <section>
+        <h2>2. Creating Objects</h2>
+        <pre><code>// Object Literal (most common)
+const person = { name: "Ali", age: 25 };
+
+// Using new Object()
+const car = new Object();
+car.brand = "Toyota";
+car.model = "Corolla";
+
+// Using Object.create()
+const animal = Object.create(null);
+animal.type = "Dog";</code></pre>
+    </section>
+
+    <section>
+        <h2>3. Accessing Properties</h2>
+        <pre><code>const user = {
+    firstName: "Muhammad",
+    lastName: "Kashif",
+    "full-name": "Muhammad Kashif"
+};
+
+// Dot Notation
+console.log(user.firstName);     // Muhammad
+
+// Bracket Notation (required for special characters or dynamic keys)
+console.log(user["lastName"]);   // Kashif
+console.log(user["full-name"]);  // Muhammad Kashif
+
+const key = "firstName";
+console.log(user[key]);          // Muhammad</code></pre>
+    </section>
+
+    <section>
+        <h2>4. Adding, Updating & Deleting Properties</h2>
+        <pre><code>const product = { name: "Laptop", price: 50000 };
+
+// Add new property
+product.brand = "Dell";
+product["color"] = "Black";
+
+// Update
+product.price = 48000;
+
+// Delete
+delete product.color;</code></pre>
+    </section>
+
+    <section>
+        <h2>Live Demo</h2>
+        <button onclick="demoObjects()">Run Objects Demo</button>
+        <pre id="output" style="min-height: 280px;"></pre>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

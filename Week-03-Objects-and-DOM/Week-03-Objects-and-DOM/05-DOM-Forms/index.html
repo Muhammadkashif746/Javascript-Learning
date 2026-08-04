@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 - DOM Forms</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>05. DOM Forms (Properties & Events)</h1>
+        <a href="../index.html">← Back to Week 3</a>
+    </header>
+
+    <section>
+        <h2>1. Accessing Form Elements</h2>
+        <pre><code>const form = document.querySelector("form");
+const nameInput = document.getElementById("name");
+const emailInput = document.querySelector("#email");
+
+// Get values
+nameInput.value
+emailInput.value
+
+// Set values
+nameInput.value = "Muhammad Kashif";</code></pre>
+    </section>
+
+    <section>
+        <h2>2. Important Form Properties & Methods</h2>
+        <pre><code>// Common properties
+input.value          // current value
+input.checked        // for checkbox/radio
+input.disabled       // disable field
+input.placeholder
+input.type
+select.selectedIndex
+select.value
+
+// Methods
+form.reset()         // clear all fields
+form.submit()        // submit the form
+input.focus()
+input.blur()</code></pre>
+    </section>
+
+    <section>
+        <h2>3. Form Events</h2>
+        <pre><code>// Most used events
+form.addEventListener("submit", function(e) {
+    e.preventDefault();   // stop page reload
+    // handle data
+});
+
+input.addEventListener("input", ...)     // every keystroke
+input.addEventListener("change", ...)    // when value changes & loses focus
+input.addEventListener("focus", ...)
+input.addEventListener("blur", ...)</code></pre>
+    </section>
+
+    <!-- ========== THREE CENTERED FORMS ========== -->
+    <section>
+        <h2 class="center-text">Live Practice Forms (Centered)</h2>
+        <p class="center-text">Three different forms using DOM — Registration, Login & Contact</p>
+
+        <div class="forms-wrapper">
+
+            <!-- 1. Registration Form -->
+            <div class="form-card">
+                <h3>Student Registration</h3>
+                <form id="studentForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="example@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" min="15" max="50" placeholder="Your age">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course">Select Course</label>
+                        <select id="course">
+                            <option value="">-- Choose Course --</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="App Development">App Development</option>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                            <option value="Data Science">Data Science</option>
+                        </select>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="agree">
+                        <label for="agree">I agree to the terms & conditions</label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="success">Register</button>
+                        <button type="button" class="secondary" onclick="resetStudentForm()">Reset</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 2. Login Form -->
+            <div class="form-card login">
+                <h3>Login Form</h3>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email / Username</label>
+                        <input type="text" id="loginEmail" placeholder="Enter email or username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" placeholder="Enter password" required>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit">Login</button>
+                        <button type="button" class="secondary" onclick="resetLoginForm()">Clear</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- 3. Contact / Feedback Form -->
+            <div class="form-card contact">
+                <h3>Contact / Feedback</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="contactName">Your Name</label>
+                        <input type="text" id="contactName" placeholder="Your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactEmail">Email</label>
+                        <input type="email" id="contactEmail" placeholder="your@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject">
+                            <option value="">-- Select Subject --</option>
+                            <option value="Feedback">Feedback</option>
+                            <option value="Question">Question</option>
+                            <option value="Bug Report">Bug Report</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Write your message here..." required></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="success">Send Message</button>
+                        <button type="button" class="secondary" onclick="resetContactForm()">Reset</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+        <h3 class="center-text">Live Output</h3>
+        <pre id="output">Submit any form above to see the result here...</pre>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

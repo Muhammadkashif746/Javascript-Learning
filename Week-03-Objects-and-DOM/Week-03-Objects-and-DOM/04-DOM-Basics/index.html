@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 - DOM Basics</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>04. DOM Basics & Manipulation</h1>
+        <a href="../index.html">← Back</a>
+    </header>
+
+    <section>
+        <h2>1. What is the DOM?</h2>
+        <p>DOM (Document Object Model) is the programming interface for HTML. JavaScript can use it to change content, structure, and style of a webpage.</p>
+    </section>
+
+    <section>
+        <h2>2. Selecting Elements</h2>
+        <pre><code>// By ID
+document.getElementById("myId")
+
+// By Class
+document.getElementsByClassName("myClass")
+
+// By Tag
+document.getElementsByTagName("p")
+
+// Modern & Preferred
+document.querySelector("#myId")
+document.querySelector(".myClass")
+document.querySelectorAll("p")</code></pre>
+    </section>
+
+    <section>
+        <h2>3. Changing Content & Style</h2>
+        <pre><code>const heading = document.querySelector("h1");
+
+// Change text
+heading.textContent = "New Heading";
+heading.innerHTML = "<span>New</span> Heading";
+
+// Change style
+heading.style.color = "blue";
+heading.style.backgroundColor = "yellow";
+
+// Add / Remove Class
+heading.classList.add("active");
+heading.classList.remove("active");
+heading.classList.toggle("dark");</code></pre>
+    </section>
+
+    <section>
+        <h2>4. Creating & Adding Elements</h2>
+        <pre><code>// Create
+const newDiv = document.createElement("div");
+newDiv.textContent = "I am new!";
+newDiv.className = "card";
+
+// Add to page
+document.body.appendChild(newDiv);
+
+// Insert before another element
+parent.insertBefore(newDiv, existingElement);</code></pre>
+    </section>
+
+    <section>
+        <h2>Live DOM Playground</h2>
+        <div id="demo-box" style="padding: 20px; background: #e0f2fe; border-radius: 10px; margin: 15px 0;">
+            <h3 id="demo-heading">Original Heading</h3>
+            <p id="demo-para">This is a paragraph. Click the buttons below to manipulate me!</p>
+            <ul id="demo-list">
+                <li>Item 1</li>
+                <li>Item 2</li>
+            </ul>
+        </div>
+
+        <button onclick="changeText()">Change Text</button>
+        <button onclick="changeStyle()">Change Style</button>
+        <button onclick="addItem()">Add List Item</button>
+        <button onclick="toggleHighlight()">Toggle Highlight</button>
+        <button onclick="resetDemo()">Reset</button>
+
+        <pre id="output" style="min-height: 120px; margin-top: 20px;"></pre>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
