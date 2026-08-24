@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05 - Fetch API Basics</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>05. Fetch API Basics</h1>
+        <a href="../index.html">← Back</a>
+    </header>
+
+    <section>
+        <h2>Fetching Real Data from Public APIs</h2>
+        <div class="demo-grid">
+            <div class="card">
+                <h3>Random Quote</h3>
+                <button id="quoteBtn">Get New Quote</button>
+                <div class="live-area" style="margin-top:15px; text-align:left;">
+                    <p id="quoteText">Click the button to load a quote...</p>
+                    <p style="margin-top:10px; color:#94a3b8;" id="quoteAuthor"></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Random Dog Image</h3>
+                <button id="dogBtn">Get Random Dog</button>
+                <div class="live-area" style="margin-top:15px;">
+                    <img id="dogImg" src="" alt="Dog will appear here" style="max-width:100%; border-radius:12px; display:none;">
+                    <p id="dogMsg">Click to load a dog 🐶</p>
+                </div>
+            </div>
+        </div>
+
+        <h3>Network Log</h3>
+        <pre id="output" class="event-log">Fetch requests will appear here...</pre>
+    </section>
+
+    <script src="api.js"></script>
+</body>
+</html>

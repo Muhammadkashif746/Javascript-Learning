@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 - Event Delegation</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>03. Event Delegation & Bubbling</h1>
+        <a href="../index.html">← Back</a>
+    </header>
+
+    <section>
+        <h2>Why Event Delegation?</h2>
+        <p>Instead of adding listeners to every button, we put one listener on the parent. Perfect when items are added dynamically.</p>
+    </section>
+
+    <section>
+        <h2>Live Todo List (Delegation Practice)</h2>
+        <input type="text" id="todoInput" placeholder="Add new task..." style="width:70%; padding:11px; border-radius:10px; border:1px solid #475569; background:#0f172a; color:white;">
+        <button id="addBtn" class="success">Add Task</button>
+
+        <ul id="todoList" style="list-style:none; margin-top:20px;"></ul>
+
+        <pre id="output" class="event-log">Click any task or delete button...</pre>
+    </section>
+
+    <script src="Event-Delegation.js"></script>
+</body>
+</html>

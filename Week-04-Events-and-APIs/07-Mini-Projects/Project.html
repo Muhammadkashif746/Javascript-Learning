@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07 - Mini + Medium Projects</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>07. Mini + Medium Projects (Heavy Practice)</h1>
+        <a href="../index.html">← Back</a>
+    </header>
+
+    <!-- 1. Live Search -->
+    <section>
+        <h2>1. Live Search Filter</h2>
+        <input type="text" id="searchInput" placeholder="Search students by name or city..." 
+               style="width:100%; padding:12px; border-radius:10px; border:1px solid #475569; background:#0f172a; color:white; font-size:16px; margin-bottom:15px;">
+        <div id="studentsList" class="demo-grid"></div>
+    </section>
+
+    <!-- 2. Todo App -->
+    <section>
+        <h2>2. Todo App with LocalStorage</h2>
+        <div style="display:flex; gap:10px; margin-bottom:15px;">
+            <input type="text" id="todoInput" placeholder="Add a new task..." style="flex:1; padding:12px; border-radius:10px; border:1px solid #475569; background:#0f172a; color:white;">
+            <button id="addTodo" class="success">Add</button>
+        </div>
+        <ul id="todoList" style="list-style:none;"></ul>
+    </section>
+
+    <!-- 3. Quote Generator -->
+    <section>
+        <h2>3. Random Quote Generator</h2>
+        <div class="card" style="max-width:600px; margin:0 auto;">
+            <p id="miniQuote" style="font-size:18px; font-style:italic;">Click below to get a quote</p>
+            <p id="miniAuthor" style="color:#94a3b8; margin:10px 0 20px;"></p>
+            <button id="newQuoteBtn">New Quote</button>
+            <button id="copyBtn" class="secondary">Copy Quote</button>
+        </div>
+    </section>
+
+    <!-- 4. Joke Generator -->
+    <section>
+        <h2>4. Random Joke Generator</h2>
+        <div class="card" style="max-width:600px; margin:0 auto; text-align:center;">
+            <p id="jokeText" style="font-size:17px; min-height:60px;">Click to get a joke 😂</p>
+            <button id="jokeBtn" class="success" style="margin-top:15px;">Get Joke</button>
+        </div>
+    </section>
+
+    <!-- 5. Color Palette Generator -->
+    <section>
+        <h2>5. Random Color Palette Generator</h2>
+        <button id="paletteBtn">Generate New Palette</button>
+        <div id="palette" class="demo-grid" style="margin-top:20px;"></div>
+    </section>
+
+    <!-- 6. Countdown Timer -->
+    <section>
+        <h2>6. Countdown Timer</h2>
+        <div class="card" style="max-width:400px; margin:0 auto; text-align:center;">
+            <div style="display:flex; gap:10px; justify-content:center; margin-bottom:15px;">
+                <input type="number" id="hours" placeholder="HH" min="0" value="0" style="width:70px; text-align:center;">
+                <input type="number" id="minutes" placeholder="MM" min="0" max="59" value="1" style="width:70px; text-align:center;">
+                <input type="number" id="seconds" placeholder="SS" min="0" max="59" value="0" style="width:70px; text-align:center;">
+            </div>
+            <h2 id="timerDisplay" style="font-size:2.5rem; color:#60a5fa; margin:15px 0;">00:01:00</h2>
+            <button id="startTimer" class="success">Start</button>
+            <button id="pauseTimer" class="secondary">Pause</button>
+            <button id="resetTimer" class="danger">Reset</button>
+        </div>
+    </section>
+
+    <!-- 7. GitHub User Finder -->
+    <section>
+        <h2>7. GitHub User Finder</h2>
+        <div style="display:flex; gap:10px; margin-bottom:20px;">
+            <input type="text" id="githubInput" placeholder="Enter GitHub username..." style="flex:1; padding:12px; border-radius:10px; border:1px solid #475569; background:#0f172a; color:white;">
+            <button id="githubBtn">Search</button>
+        </div>
+        <div id="githubCard" class="card" style="display:none; max-width:500px;">
+            <img id="ghAvatar" style="width:90px; height:90px; border-radius:50%; margin-bottom:12px;">
+            <h3 id="ghName"></h3>
+            <p id="ghBio" style="color:#94a3b8; margin:8px 0;"></p>
+            <p>Repos: <span id="ghRepos"></span> | Followers: <span id="ghFollowers"></span></p>
+            <a id="ghLink" target="_blank" style="display:inline-block; margin-top:12px;">View Profile →</a>
+        </div>
+        <p id="ghError" style="color:#f87171; display:none;"></p>
+    </section>
+
+    <!-- 8. Notes App -->
+    <section>
+        <h2>8. Quick Notes App</h2>
+        <textarea id="noteInput" placeholder="Write your note here..." rows="4" 
+                  style="width:100%; padding:14px; border-radius:12px; border:1px solid #475569; background:#0f172a; color:white; font-size:15px; margin-bottom:12px;"></textarea>
+        <button id="saveNote" class="success">Save Note</button>
+        <div id="notesList" style="margin-top:20px;"></div>
+    </section>
+
+    <!-- 9. Weather App (Open-Meteo - no API key needed) -->
+    <section>
+        <h2>9. Simple Weather App</h2>
+        <div style="display:flex; gap:10px; margin-bottom:20px;">
+            <input type="text" id="cityInput" placeholder="Enter city name (e.g. Karachi, Lahore, London)" 
+                   style="flex:1; padding:12px; border-radius:10px; border:1px solid #475569; background:#0f172a; color:white;">
+            <button id="weatherBtn">Get Weather</button>
+        </div>
+        <div id="weatherCard" class="card" style="display:none; max-width:400px; text-align:center;">
+            <h3 id="weatherCity"></h3>
+            <p style="font-size:3rem; margin:10px 0;" id="weatherTemp"></p>
+            <p id="weatherDesc" style="color:#94a3b8;"></p>
+            <p style="margin-top:10px;">Humidity: <span id="weatherHumidity"></span>% | Wind: <span id="weatherWind"></span> km/h</p>
+        </div>
+        <p id="weatherError" style="color:#f87171; display:none;"></p>
+    </section>
+
+    <script src="project.js"></script>
+</body>
+</html>

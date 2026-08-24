@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 - Mouse & Keyboard Events</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>02. Mouse & Keyboard Events</h1>
+        <a href="../index.html">← Back</a>
+    </header>
+
+    <section>
+        <h2>Mouse Position Tracker</h2>
+        <div id="mouseArea" class="live-area" style="height:180px; cursor:crosshair;">
+            Move your mouse here
+        </div>
+        <p>X: <span id="mouseX">0</span> | Y: <span id="mouseY">0</span></p>
+    </section>
+
+    <section>
+        <h2>Keyboard Events</h2>
+        <input type="text" id="keyInput" placeholder="Type anything here..." style="width:100%; padding:12px; border-radius:10px; border:1px solid #475569; background:#0f172a; color:white; font-size:16px;">
+        <p style="margin-top:12px;">Last Key: <strong id="lastKey">—</strong> | Key Code: <strong id="keyCode">—</strong></p>
+        <pre id="output" class="event-log">Key events will show here...</pre>
+    </section>
+
+    <script src="Mouse-Event.js"></script>
+</body>
+</html>

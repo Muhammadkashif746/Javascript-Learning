@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 - Events Fundamentals</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>01. Events Fundamentals</h1>
+        <a href="../index.html">← Back</a>
+    </header>
+
+    <section>
+        <h2>What is an Event?</h2>
+        <p>Events are actions that happen in the browser (click, keypress, load, submit…). JavaScript can listen and react to them.</p>
+        <pre>element.addEventListener("click", function() {
+    // code runs when clicked
+});</pre>
+    </section>
+
+    <section>
+        <h2>Live Practice</h2>
+        <div class="demo-grid">
+            <div class="card">
+                <h3>Click Counter</h3>
+                <button id="clickBtn">Click Me</button>
+                <p>Count: <strong id="clickCount">0</strong></p>
+            </div>
+            <div class="card">
+                <h3>Double Click</h3>
+                <button id="dblBtn">Double Click Me</button>
+                <p id="dblMsg">Waiting...</p>
+            </div>
+            <div class="card">
+                <h3>Mouse Enter / Leave</h3>
+                <div id="hoverBox" class="live-area" style="background:#1e40af; cursor:pointer;">
+                    Hover over me
+                </div>
+            </div>
+        </div>
+        <h3>Event Log</h3>
+        <pre id="output" class="event-log">Events will appear here...</pre>
+    </section>
+
+    <script src="event.js"></script>
+</body>
+</html>

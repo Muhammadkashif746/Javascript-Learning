@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06 - Async / Await Practice</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <h1>06. Async / Await Practice</h1>
+        <a href="../index.html">← Back</a>
+    </header>
+
+    <section>
+        <h2>Modern way of handling APIs</h2>
+        <p>async/await makes asynchronous code look cleaner and easier to read.</p>
+
+        <div class="demo-grid">
+            <div class="card">
+                <h3>Random User Generator</h3>
+                <button id="userBtn" class="success">Generate User</button>
+                <div id="userCard" class="live-area" style="margin-top:15px; text-align:left; display:none;">
+                    <img id="userImg" style="width:80px; height:80px; border-radius:50%; margin-bottom:10px;">
+                    <p><strong>Name:</strong> <span id="userName"></span></p>
+                    <p><strong>Email:</strong> <span id="userEmail"></span></p>
+                    <p><strong>Location:</strong> <span id="userLoc"></span></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Posts from JSONPlaceholder</h3>
+                <button id="postsBtn">Load 5 Posts</button>
+                <div id="postsList" style="margin-top:15px; max-height:250px; overflow-y:auto;"></div>
+            </div>
+        </div>
+
+        <pre id="output" class="event-log">Async operations will appear here...</pre>
+    </section>
+
+    <script src="Aysnc.js"></script>
+</body>
+</html>
