@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Calculator</title>
+  <meta name="description" content="A premium, minimal calculator built with HTML, Tailwind CSS and vanilla JavaScript." />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            page: "#F8F9FB",
+            card: "#FFFFFF",
+            ink: "#111827",
+            muted: "#64748B",
+            numbg: "#F8FAFC",
+            accent: {
+              DEFAULT: "#4F46E5",
+              soft: "#EEF0FF",
+            },
+          },
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="output.css" class="css">
+</head>
+<body class="bg-page min-h-screen font-sans text-ink antialiased overflow-x-hidden">
+
+  <div class="min-h-screen flex items-center justify-center px-4 py-6">
+    <div class="w-full max-w-[420px] mx-auto">
+
+      <header class="text-center mb-5">
+        <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight text-ink">Calculator</h1>
+        <p class="text-xs sm:text-sm text-muted mt-1">Simple, fast and fully functional</p>
+      </header>
+
+      <main>
+
+        <!-- Calculator card -->
+        <section
+          id="calculator"
+          class="bg-card rounded-[18px] border border-slate-200/70 shadow-[0_10px_30px_rgba(15,23,42,0.06)] p-4 sm:p-5"
+          aria-label="Calculator"
+        >
+          <!-- Display sections  -->
+          <div class="min-h-[100px] sm:min-h-[110px] flex flex-col justify-end rounded-[14px] bg-numbg px-4 sm:px-5 py-3.5 sm:py-4 mb-3.5">
+            <div
+              id="previous-operand"
+              class="text-right text-muted text-xs sm:text-sm min-h-[1.1rem] truncate select-none"
+              aria-hidden="true"
+            >&nbsp;</div>
+            <div
+              id="current-operand"
+              class="text-right text-ink font-bold text-[clamp(1.9rem,7vw,3.25rem)] leading-tight overflow-x-auto whitespace-nowrap"
+              role="status"
+              aria-live="polite"
+              aria-label="Calculator display"
+            >0</div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="grid grid-cols-4 gap-2 sm:gap-2.5">
+
+            <button type="button" data-action="clear"
+              class="h-12 sm:h-14 rounded-[14px] bg-slate-100 text-muted text-sm sm:text-base font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-slate-200 active:translate-y-0 active:scale-[0.97] active:bg-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+              aria-label="All clear">AC</button>
+
+            <button type="button" data-action="delete"
+              class="h-12 sm:h-14 rounded-[14px] bg-slate-100 text-muted text-sm sm:text-base font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-slate-200 active:translate-y-0 active:scale-[0.97] active:bg-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+              aria-label="Delete last digit">⌫</button>
+
+            <button type="button" data-action="percent"
+              class="h-12 sm:h-14 rounded-[14px] bg-slate-100 text-muted text-sm sm:text-base font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-slate-200 active:translate-y-0 active:scale-[0.97] active:bg-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+              aria-label="Percent">%</button>
+
+            <button type="button" data-operator="÷"
+              class="h-12 sm:h-14 rounded-[14px] bg-accent-soft text-accent text-lg sm:text-xl font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-indigo-100 active:translate-y-0 active:scale-[0.97] active:bg-indigo-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+              aria-label="Divide">÷</button>
+
+            <button type="button" data-digit="7" class="h-12 sm:h-14 rounded-[14px] bg-numbg text-ink text-lg sm:text-xl font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-slate-200 active:translate-y-0 active:scale-[0.97] active:bg-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" aria-label="Seven">7</button>
+            <button type="button" data-digit="8" class="h-12 sm:h-14 rounded-[14px] bg-numbg text-ink text-lg sm:text-xl font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-slate-200 active:translate-y-0 active:scale-[0.97] active:bg-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" aria-label="Eight">8</button>
+            <button type="button" data-digit="9" class="h-12 sm:h-14 rounded-[14px] bg-numbg text-ink text-lg sm:text-xl font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-slate-200 active:translate-y-0 active:scale-[0.97] active:bg-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" aria-label="Nine">9</button>
+
+            <button type="button" data-operator="×"
+              class="h-12 sm:h-14 rounded-[14px] bg-accent-soft text-accent text-lg sm:text-xl font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-indigo-100 active:translate-y-0 active:scale-[0.97] active:bg-indigo-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+              aria-label="Multiply">×</button>
+
+            <button type="button" data-digit="4" class="h-12 sm:h-14 rounded-[14px] bg-numbg text-ink text-lg sm:text-xl font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-slate-200 active:translate-y-0 active:scale-[0.97] active:bg-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" aria-label="Four">4</button>
+            <button type="button" data-digit="5" class="h-12 sm:h-14 rounded-[14px] bg-numbg text-ink text-lg sm:text-xl font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-slate-200 active:translate-y-0 active:scale-[0.97] active:bg-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" aria-label="Five">5</button>
+            <button type="button" data-digit="6" class="h-12 sm:h-14 rounded-[14px] bg-numbg text-ink text-lg sm:text-xl font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-slate-200 active:translate-y-0 active:scale-[0.97] active:bg-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" aria-label="Six">6</button>
+
+            <button type="button" data-operator="−"
+              class="h-12 sm:h-14 rounded-[14px] bg-accent-soft text-accent text-lg sm:text-xl font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-indigo-100 active:translate-y-0 active:scale-[0.97] active:bg-indigo-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+              aria-label="Subtract">−</button>
+
+            <button type="button" data-digit="1" class="h-12 sm:h-14 rounded-[14px] bg-numbg text-ink text-lg sm:text-xl font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-slate-200 active:translate-y-0 active:scale-[0.97] active:bg-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" aria-label="One">1</button>
+            <button type="button" data-digit="2" class="h-12 sm:h-14 rounded-[14px] bg-numbg text-ink text-lg sm:text-xl font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-slate-200 active:translate-y-0 active:scale-[0.97] active:bg-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" aria-label="Two">2</button>
+            <button type="button" data-digit="3" class="h-12 sm:h-14 rounded-[14px] bg-numbg text-ink text-lg sm:text-xl font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-slate-200 active:translate-y-0 active:scale-[0.97] active:bg-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2" aria-label="Three">3</button>
+
+            <button type="button" data-operator="+"
+              class="h-12 sm:h-14 rounded-[14px] bg-accent-soft text-accent text-lg sm:text-xl font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-indigo-100 active:translate-y-0 active:scale-[0.97] active:bg-indigo-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+              aria-label="Add">+</button>
+
+            <button type="button" data-digit="0"
+              class="col-span-2 h-12 sm:h-14 rounded-[14px] bg-numbg text-ink text-lg sm:text-xl font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-slate-200 active:translate-y-0 active:scale-[0.97] active:bg-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+              aria-label="Zero">0</button>
+
+            <button type="button" data-action="decimal"
+              class="h-12 sm:h-14 rounded-[14px] bg-numbg text-ink text-lg sm:text-xl font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-slate-200 active:translate-y-0 active:scale-[0.97] active:bg-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+              aria-label="Decimal point">.</button>
+
+            <button type="button" data-action="equals"
+              class="h-12 sm:h-14 rounded-[14px] bg-accent text-white text-lg sm:text-xl font-semibold select-none cursor-pointer transition-all duration-150 hover:-translate-y-px hover:bg-indigo-700 active:translate-y-0 active:scale-[0.97] active:bg-indigo-800 shadow-[0_10px_24px_-8px_rgba(79,70,229,0.55)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+              aria-label="Calculate result">=</button>
+
+          </div>
+
+          <!-- History toggle -->
+          <button
+            type="button"
+            id="history-toggle"
+            class="mt-3 w-full flex items-center justify-between px-1 py-1.5 text-xs sm:text-sm font-semibold text-muted hover:text-ink transition-colors duration-150 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded"
+            aria-expanded="false"
+            aria-controls="history-drawer"
+          >
+            <span class="flex items-center gap-1.5">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 7v5l3 3" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              History
+            </span>
+            <svg id="history-chevron" class="w-3.5 h-3.5 transition-transform duration-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <!-- History drawer (collapsible) -->
+          <div id="history-drawer" class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out">
+            <div class="overflow-hidden">
+              <div class="pt-2.5 mt-0.5 border-t border-slate-100">
+
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="text-[0.7rem] font-medium text-slate-400">Recent calculations</span>
+                  <button
+                    type="button"
+                    id="clear-history"
+                    class="text-xs font-medium text-muted hover:text-red-500 transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 rounded"
+                    aria-label="Clear calculation history"
+                  >
+                    Clear
+                  </button>
+                </div>
+
+                <ul id="history-list" class="divide-y divide-slate-100 max-h-40 overflow-y-auto -mx-1"></ul>
+
+                <!-- Empty state (shown/hidden via JS) -->
+                <div id="history-empty" class="flex flex-col items-center text-center py-5 px-2">
+                  <svg class="w-6 h-6 text-slate-300 mb-1.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 7v5l3 3" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                  <p class="text-xs font-medium text-slate-500">No calculations yet</p>
+                  <p class="text-[0.7rem] text-slate-400 mt-0.5">Your calculations will appear here.</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+      </main>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
